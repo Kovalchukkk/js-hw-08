@@ -9,3 +9,7 @@ player.on('play', function () {
 player.getVideoTitle().then(function (title) {
   console.log('title:', title);
 });
+
+// timeupdate
+
+player.on('timeupdate', onTime);
