@@ -11,7 +11,9 @@ player.getVideoTitle().then(function (title) {
 });
 
 // timeupdate
-
 player.on('timeupdate', onTime);
 
-function onTime(data) {}
+function onTime(data) {
+  const videoplayerCurrentTime = JSON.stringify(data);
+  localStorage.setItem('videoplayer-current-time', videoplayerCurrentTime);
+}
