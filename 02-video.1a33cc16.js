@@ -1,0 +1,2 @@
+!function(){var e=document.querySelector("iframe"),t=new Vimeo.Player(e);t.on("play",(function(){console.log("played the video!")})),t.getVideoTitle().then((function(e){console.log("title:",e)}));var o=localStorage.getItem("videoplayer-current-time");if(o){var n=JSON.parse(o);console.log("savedTiming: ",n);var i=n.seconds;t.setCurrentTime(i).then((function(e){})).catch((function(e){e.name}))}t.on("timeupdate",(function(e){var t=JSON.stringify(e);localStorage.setItem("videoplayer-current-time",t)}))}();
+//# sourceMappingURL=02-video.1a33cc16.js.map
