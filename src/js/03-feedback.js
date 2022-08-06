@@ -7,6 +7,8 @@ const refs = {
   textarea: document.querySelector('.feedback-form textarea'),
 };
 
+fillFormInput();
+
 refs.form.addEventListener('input', onFormInput);
 
 function onFormInput(e) {
