@@ -10,12 +10,20 @@ const refs = {
 fillFormInput();
 
 refs.form.addEventListener('input', onFormInput);
+refs.form.addEventListener('submit', onFormSubmit);
 
 function onFormInput(e) {
   formData[e.target.name] = e.target.value;
   const formDataString = JSON.stringify(formData);
 
   localStorage.setItem(STORAGE_KEY, formDataString);
+}
+
+function onFormSubmit(evt) {
+  evt.preventDefault();
+  evt.currentTarget.reset();
+  console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+  localStorage.removeItem(STORAGE_KEY);
 }
 
 function fillFormInput() {
