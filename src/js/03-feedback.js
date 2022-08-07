@@ -11,7 +11,7 @@ const refs = {
 
 fillFormInput();
 
-refs.form.addEventListener('input', onFormInput);
+refs.form.addEventListener('input', throttle(onFormInput, 500));
 refs.form.addEventListener('submit', onFormSubmit);
 
 function onFormInput(e) {
